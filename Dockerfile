@@ -11,7 +11,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
   && php composer-setup.php --install-dir=/usr/local/bin --filename=composer --version=${COMPOSER_VERSION}
 
 RUN apt-get update \
-  && apt-get install -y libmagickwand-dev zlib1g-dev libpng-dev \
+  && apt-get install -y libmagickwand-dev zlib1g-dev libpng-dev git-core \
   && pecl install imagick \
   && docker-php-ext-enable imagick \
   && docker-php-ext-install gd \
